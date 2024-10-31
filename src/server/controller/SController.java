@@ -3,10 +3,10 @@ package server.controller;
 import server.model.Server;
 import server.view.SView;
 
-public class Controller {
-    SView sView;
-    Server server;
-    public Controller(SView sView) {
+public class SController {
+    private SView sView;
+    private Server server;
+    public SController(SView sView) {
         this.sView = sView;
         server = new Server(this.sView);
     }
@@ -22,5 +22,9 @@ public class Controller {
 
     public void setOn(boolean b) {
         server.setOn(b);
+    }
+
+    public Server getServer() {
+        return server;
     }
 }
